@@ -15,8 +15,8 @@
 		5C859FC5246312540003ECB7 /* ImageViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C859FC4246312540003ECB7 /* ImageViewerUITests.swift */; };
 		5C859FD424632ABE0003ECB7 /* .swiftlint.yml  in Resources */ = {isa = PBXBuildFile; fileRef = 5C859FD324632ABE0003ECB7 /* .swiftlint.yml  */; };
 		5C8A68052463D3120085EFC7 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68042463D3120085EFC7 /* FactsModel.swift */; };
-		5C8A68082463D5810085EFC7 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68072463D5810085EFC7 /* DetailCollectionViewCell.swift */; };
-		5C8A680B2463D6190085EFC7 /* MainContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680A2463D6190085EFC7 /* MainContentViewModel.swift */; };
+		5C8A68082463D5810085EFC7 /* RowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68072463D5810085EFC7 /* RowCollectionViewCell.swift */; };
+		5C8A680B2463D6190085EFC7 /* FactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680A2463D6190085EFC7 /* FactsViewModel.swift */; };
 		5C8A680E2463D6780085EFC7 /* NetworkingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680D2463D6780085EFC7 /* NetworkingHandler.swift */; };
 		5C8A68102463DB690085EFC7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680F2463DB690085EFC7 /* LoadingViewController.swift */; };
 		5C8A68122463DB820085EFC7 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68112463DB820085EFC7 /* EmptyViewController.swift */; };
@@ -64,8 +64,8 @@
 		5C859FC6246312540003ECB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C859FD324632ABE0003ECB7 /* .swiftlint.yml  */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swiftlint.yml "; sourceTree = "<group>"; };
 		5C8A68042463D3120085EFC7 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
-		5C8A68072463D5810085EFC7 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
-		5C8A680A2463D6190085EFC7 /* MainContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewModel.swift; sourceTree = "<group>"; };
+		5C8A68072463D5810085EFC7 /* RowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C8A680A2463D6190085EFC7 /* FactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewModel.swift; sourceTree = "<group>"; };
 		5C8A680D2463D6780085EFC7 /* NetworkingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHandler.swift; sourceTree = "<group>"; };
 		5C8A680F2463DB690085EFC7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		5C8A68112463DB820085EFC7 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		5C8A68062463D47F0085EFC7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5C8A68072463D5810085EFC7 /* DetailCollectionViewCell.swift */,
+				5C8A68072463D5810085EFC7 /* RowCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 		5C8A68092463D5EE0085EFC7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5C8A680A2463D6190085EFC7 /* MainContentViewModel.swift */,
+				5C8A680A2463D6190085EFC7 /* FactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -495,7 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C8A68102463DB690085EFC7 /* LoadingViewController.swift in Sources */,
-				5C8A680B2463D6190085EFC7 /* MainContentViewModel.swift in Sources */,
+				5C8A680B2463D6190085EFC7 /* FactsViewModel.swift in Sources */,
 				5C8A68122463DB820085EFC7 /* EmptyViewController.swift in Sources */,
 				5CE333F92463E82000D01552 /* UIView+LayoutContraint.swift in Sources */,
 				5C859FA7246312530003ECB7 /* MainViewController.swift in Sources */,
@@ -503,7 +503,7 @@
 				5C8A680E2463D6780085EFC7 /* NetworkingHandler.swift in Sources */,
 				5C8A68052463D3120085EFC7 /* FactsModel.swift in Sources */,
 				5C859FA3246312530003ECB7 /* AppDelegate.swift in Sources */,
-				5C8A68082463D5810085EFC7 /* DetailCollectionViewCell.swift in Sources */,
+				5C8A68082463D5810085EFC7 /* RowCollectionViewCell.swift in Sources */,
 				5CE333FB2463F6D000D01552 /* RowModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

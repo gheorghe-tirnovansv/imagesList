@@ -9,6 +9,8 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
+    private var activityView = UIActivityIndicatorView()
+    private var messageLabel = UILabel()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -20,10 +22,22 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.translatesAutoresizingMaskIntoConstraints = false
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        activityView.color = .black
+        activityView.style = .gray
         
-        view.backgroundColor = .yellow
+        view.addSubview(activityView)
+        activityView.centerToView(view: view)
+        view.backgroundColor = .white
+        activityView.startAnimating()
+        
+        view.addSubview(messageLabel)
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.text = "Please wait until you data is loaded..."
+        messageLabel.textAlignment = .center
+        messageLabel.alignToLeft(view: view)
+        messageLabel.alignToRight(view: view)
+        messageLabel.alignBottom(toTopView: activityView, padding: 20)
     }
-
 }

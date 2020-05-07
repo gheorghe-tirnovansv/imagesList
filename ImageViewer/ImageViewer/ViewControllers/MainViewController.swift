@@ -28,8 +28,10 @@ class MainViewController: UIViewController {
             case .emptyContent:
                 self.title = ""
                 showController(emptyViewController)
-            case .fullContent:
-                self.title = "Needs to be updated"
+            case .fullContent(let content):
+                let viewModel = FactsViewModel(with: content)
+                self.title = viewModel.title
+                contentViewController.viewModel = viewModel
                 showController(contentViewController)
             }
         }
@@ -44,7 +46,6 @@ class MainViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         currentState = .loading
@@ -65,6 +66,7 @@ class MainViewController: UIViewController {
         currentViewController = new
         self.view.addSubview(currentViewController.view)
         self.addChild(currentViewController)
+        currentViewController.didMove(toParent: self)
         self.view.stickToView(view: currentViewController.view)
     }
 }
