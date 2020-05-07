@@ -12,3 +12,10 @@ struct FactsModel: Codable {
     var title: String
     var rows: [RowModel]
 }
+
+
+extension FactsModel : Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.title == rhs.title && lhs.rows == rhs.rows
+    }
+}

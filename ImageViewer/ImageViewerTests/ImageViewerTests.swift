@@ -9,26 +9,17 @@
 import XCTest
 @testable import ImageViewer
 
-class ImageViewerTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class NoContentViewModelTests: XCTestCase {
+    
+    func test_errorContextDescription_whenURL_isInvalid() {
+        let expectedString = "Content could not be loaded due to some issues with URL."
+        let viewModel =  NoContentViewModel(with:NetworkingErrorContext.invalidUrl)
+        XCTAssertEqual(viewModel.errorContextDescription, expectedString, "String returned is invalid")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_defaultMessage_returns_corectValue() {
+        let expectedString = "Unfortunatelly content could not be loaded"
+        XCTAssertEqual(NoContentViewModel.defaultMessage, expectedString, "String returned is invalid")
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
+

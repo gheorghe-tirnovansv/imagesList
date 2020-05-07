@@ -13,3 +13,9 @@ struct RowModel: Codable {
     var description: String?
     var imageHref: String?
 }
+
+extension RowModel : Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.title == rhs.title && lhs.description == rhs.description && lhs.imageHref == rhs.imageHref
+    }
+}
