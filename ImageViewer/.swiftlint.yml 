@@ -4,9 +4,10 @@ whitelist_rules:
   - legacy_constructor
   - trailing_semicolon
   - trailing_newline
+  
 excluded:
   - Carthage
-  - Pods
+  - "Pods/"
   - ThirdParty
   - scripts
 

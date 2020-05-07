@@ -14,6 +14,15 @@
 		5C859FBA246312540003ECB7 /* ImageViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C859FB9246312540003ECB7 /* ImageViewerTests.swift */; };
 		5C859FC5246312540003ECB7 /* ImageViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C859FC4246312540003ECB7 /* ImageViewerUITests.swift */; };
 		5C859FD424632ABE0003ECB7 /* .swiftlint.yml  in Resources */ = {isa = PBXBuildFile; fileRef = 5C859FD324632ABE0003ECB7 /* .swiftlint.yml  */; };
+		5C8A68052463D3120085EFC7 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68042463D3120085EFC7 /* FactsModel.swift */; };
+		5C8A68082463D5810085EFC7 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68072463D5810085EFC7 /* DetailCollectionViewCell.swift */; };
+		5C8A680B2463D6190085EFC7 /* MainContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680A2463D6190085EFC7 /* MainContentViewModel.swift */; };
+		5C8A680E2463D6780085EFC7 /* NetworkingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680D2463D6780085EFC7 /* NetworkingHandler.swift */; };
+		5C8A68102463DB690085EFC7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680F2463DB690085EFC7 /* LoadingViewController.swift */; };
+		5C8A68122463DB820085EFC7 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68112463DB820085EFC7 /* EmptyViewController.swift */; };
+		5C8A68142463DB980085EFC7 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68132463DB980085EFC7 /* ContentViewController.swift */; };
+		5CE333F92463E82000D01552 /* UIView+LayoutContraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE333F82463E82000D01552 /* UIView+LayoutContraint.swift */; };
+		5CE333FB2463F6D000D01552 /* RowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE333FA2463F6D000D01552 /* RowModel.swift */; };
 		5F81CE32BE8C0433A8643EC9 /* Pods_ImageViewer_ImageViewerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B8DDADA60EA7E38BC99264 /* Pods_ImageViewer_ImageViewerUITests.framework */; };
 		6C67970A482495A4CFE963A3 /* Pods_ImageViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4017A603B02FE3F440E4D5EE /* Pods_ImageViewerTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +63,15 @@
 		5C859FC4246312540003ECB7 /* ImageViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerUITests.swift; sourceTree = "<group>"; };
 		5C859FC6246312540003ECB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C859FD324632ABE0003ECB7 /* .swiftlint.yml  */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swiftlint.yml "; sourceTree = "<group>"; };
+		5C8A68042463D3120085EFC7 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
+		5C8A68072463D5810085EFC7 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C8A680A2463D6190085EFC7 /* MainContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentViewModel.swift; sourceTree = "<group>"; };
+		5C8A680D2463D6780085EFC7 /* NetworkingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHandler.swift; sourceTree = "<group>"; };
+		5C8A680F2463DB690085EFC7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		5C8A68112463DB820085EFC7 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
+		5C8A68132463DB980085EFC7 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		5CE333F82463E82000D01552 /* UIView+LayoutContraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutContraint.swift"; sourceTree = "<group>"; };
+		5CE333FA2463F6D000D01552 /* RowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowModel.swift; sourceTree = "<group>"; };
 		A79BDEA34BB3A0C590ACA091 /* Pods-ImageViewer-ImageViewerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageViewer-ImageViewerUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImageViewer-ImageViewerUITests/Pods-ImageViewer-ImageViewerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCFE2EE2A7175B368DE54FB8 /* Pods-ImageViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageViewerTests.release.xcconfig"; path = "Target Support Files/Pods-ImageViewerTests/Pods-ImageViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1D2D23405F6D47B1D178B07 /* Pods-ImageViewer-ImageViewerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageViewer-ImageViewerUITests.release.xcconfig"; path = "Target Support Files/Pods-ImageViewer-ImageViewerUITests/Pods-ImageViewer-ImageViewerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,8 +141,13 @@
 		5C859FA1246312530003ECB7 /* ImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				5CE333F72463E7F000D01552 /* Additions */,
+				5C8A680C2463D6580085EFC7 /* Handlers */,
+				5C8A68092463D5EE0085EFC7 /* ViewModels */,
+				5C8A68062463D47F0085EFC7 /* Views */,
+				5C8A68032463D2610085EFC7 /* Models */,
+				5C8A68022463D2390085EFC7 /* ViewControllers */,
 				5C859FA2246312530003ECB7 /* AppDelegate.swift */,
-				5C859FA6246312530003ECB7 /* MainViewController.swift */,
 				5C859FAB246312540003ECB7 /* Assets.xcassets */,
 				5C859FB0246312540003ECB7 /* Info.plist */,
 			);
@@ -147,6 +170,58 @@
 				5C859FC6246312540003ECB7 /* Info.plist */,
 			);
 			path = ImageViewerUITests;
+			sourceTree = "<group>";
+		};
+		5C8A68022463D2390085EFC7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C859FA6246312530003ECB7 /* MainViewController.swift */,
+				5C8A680F2463DB690085EFC7 /* LoadingViewController.swift */,
+				5C8A68112463DB820085EFC7 /* EmptyViewController.swift */,
+				5C8A68132463DB980085EFC7 /* ContentViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5C8A68032463D2610085EFC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C8A68042463D3120085EFC7 /* FactsModel.swift */,
+				5CE333FA2463F6D000D01552 /* RowModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C8A68062463D47F0085EFC7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C8A68072463D5810085EFC7 /* DetailCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C8A68092463D5EE0085EFC7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C8A680A2463D6190085EFC7 /* MainContentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C8A680C2463D6580085EFC7 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				5C8A680D2463D6780085EFC7 /* NetworkingHandler.swift */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		5CE333F72463E7F000D01552 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				5CE333F82463E82000D01552 /* UIView+LayoutContraint.swift */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 		CDCBBF1DC178D5BF4E8224A2 /* Pods */ = {
@@ -174,7 +249,7 @@
 				5C859F9C246312530003ECB7 /* Frameworks */,
 				5C859F9D246312530003ECB7 /* Resources */,
 				1C93340651F3D3EE2BD82EF1 /* [CP] Embed Pods Frameworks */,
-				5C859FD2246323EB0003ECB7 /* ShellScript */,
+				5C859FD2246323EB0003ECB7 /* Run Script - SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -328,7 +403,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageViewer-ImageViewerUITests/Pods-ImageViewer-ImageViewerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5C859FD2246323EB0003ECB7 /* ShellScript */ = {
+		5C859FD2246323EB0003ECB7 /* Run Script - SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -337,6 +412,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script - SwiftLint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -418,8 +494,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8A68102463DB690085EFC7 /* LoadingViewController.swift in Sources */,
+				5C8A680B2463D6190085EFC7 /* MainContentViewModel.swift in Sources */,
+				5C8A68122463DB820085EFC7 /* EmptyViewController.swift in Sources */,
+				5CE333F92463E82000D01552 /* UIView+LayoutContraint.swift in Sources */,
 				5C859FA7246312530003ECB7 /* MainViewController.swift in Sources */,
+				5C8A68142463DB980085EFC7 /* ContentViewController.swift in Sources */,
+				5C8A680E2463D6780085EFC7 /* NetworkingHandler.swift in Sources */,
+				5C8A68052463D3120085EFC7 /* FactsModel.swift in Sources */,
 				5C859FA3246312530003ECB7 /* AppDelegate.swift in Sources */,
+				5C8A68082463D5810085EFC7 /* DetailCollectionViewCell.swift in Sources */,
+				5CE333FB2463F6D000D01552 /* RowModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
