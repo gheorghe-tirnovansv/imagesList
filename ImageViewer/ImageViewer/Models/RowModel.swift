@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Model struct used to display cell content
+*/
 struct RowModel: Codable {
     var title: String?
     var description: String?

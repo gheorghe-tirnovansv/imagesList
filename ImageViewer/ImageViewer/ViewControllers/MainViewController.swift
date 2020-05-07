@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ The root screen responsible to display states: laoding, full content or empty content
+*/
 class MainViewController: UIViewController {
 
     enum ControllerState {
@@ -79,6 +82,6 @@ class MainViewController: UIViewController {
         self.view.addSubview(currentViewController.view)
         self.addChild(currentViewController)
         currentViewController.didMove(toParent: self)
-        self.view.stickToView(view: currentViewController.view)
+        self.view.embedToView(view: currentViewController.view)
     }
 }

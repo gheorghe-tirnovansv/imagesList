@@ -6,12 +6,16 @@
 //  Copyright © 2020 gheorghe.tirnovan. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
+/**
+ Class designed to compute information displayed for empty screen
+*/
 class NoContentViewModel: NSObject {
+    static let defaultMessage = "Unfortunatelly content could not be loaded"
+    
     private(set) var errorContextDescription = ""
     private(set) var title = "Error"
-    static let defaultMessage = "Unfortunatelly content could not be loaded"
     
     init(with errorContext: NetworkingErrorContext) {
         super.init()

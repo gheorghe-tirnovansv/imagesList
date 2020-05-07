@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Facts model struct used to display main screen content
+*/
 struct FactsModel: Codable {
     var title: String
     var rows: [RowModel]

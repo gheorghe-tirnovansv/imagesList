@@ -9,6 +9,9 @@
 import UIKit
 import SDWebImage
 
+/**
+ Class which implements layout of cells displayed on the main screen
+*/
 class RowCollectionViewCell: UICollectionViewCell {
     private var imageView = UIImageView()
     private var titleLabel = UILabel()
@@ -36,8 +39,7 @@ class RowCollectionViewCell: UICollectionViewCell {
     }
     
     func setupUI() {
-        backgroundView?.backgroundColor = .gray
-        contentView.backgroundColor = .gray
+        contentView.backgroundColor = .white
         
         translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +79,7 @@ class RowCollectionViewCell: UICollectionViewCell {
         
         descriptionLabel.textAlignment = .left
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.alignToBottom(view: contentView)
+        descriptionLabel.alignBottom(toTopOf: contentView)
         descriptionLabel.alignToLeft(view: contentView)
         descriptionLabel.alignToRight(view: contentView)
         
@@ -93,7 +95,7 @@ class RowCollectionViewCell: UICollectionViewCell {
         let url = URL(string:  model.imageHref ?? "")
         imageView.sd_setImage(with: url,
                               placeholderImage: UIImage(named: "placeholderImage"),
-                              options: .avoidDecodeImage, progress: nil) {[weak self] (image, error, type, url) in
+                              progress: nil) {[weak self] (image, error, type, url) in
                                 guard let self = self else { return }
                                 self.widthConstraint?.constant = self.imageView.image?.size.width ?? RowCollectionViewCell.defaultImageWidth
                                 self.heightConstraint?.constant = self.imageView.image?.size.height ?? RowCollectionViewCell.defaultImageHight

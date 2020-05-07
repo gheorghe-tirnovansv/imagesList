@@ -255,7 +255,6 @@
 				5C859F9C246312530003ECB7 /* Frameworks */,
 				5C859F9D246312530003ECB7 /* Resources */,
 				1C93340651F3D3EE2BD82EF1 /* [CP] Embed Pods Frameworks */,
-				5C859FD2246323EB0003ECB7 /* Run Script - SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -408,24 +407,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageViewer-ImageViewerUITests/Pods-ImageViewer-ImageViewerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		5C859FD2246323EB0003ECB7 /* Run Script - SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script - SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		A45300B3552E1C915CB7BC31 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

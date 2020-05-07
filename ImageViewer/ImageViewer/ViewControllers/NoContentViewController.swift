@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Screen which displays empty state or error state
+*/
 class NoContentViewController: UIViewController {
     private let descriptionLabel = UILabel()
     
@@ -15,14 +18,6 @@ class NoContentViewController: UIViewController {
         didSet {
             descriptionLabel.text = viewModel?.errorContextDescription ?? NoContentViewModel.defaultMessage
         }
-    }
-
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -35,7 +30,7 @@ class NoContentViewController: UIViewController {
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
         descriptionLabel.text = viewModel?.errorContextDescription ?? NoContentViewModel.defaultMessage
-        descriptionLabel.centerYtoView(view: view)
+        descriptionLabel.centerX(to: view)
         descriptionLabel.alignToLeft(view: view)
         descriptionLabel.alignToRight(view: view)
     }

@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-// MARK: - Create constraints for multiple views
+/**
+This extension offers support to add layout constraints in a quickly manner
+*/
 extension UIView {
     func alignToLeft(view: UIView, padding: CGFloat = 0.0) {
         NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: padding).isActive = true
@@ -23,7 +25,7 @@ extension UIView {
         NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: padding).isActive = true
     }
     
-    func alignToBottom(view: UIView, padding: CGFloat = 0.0) {
+    func alignBottom(toTopOf view: UIView, padding: CGFloat = 0.0) {
         NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: padding).isActive = true
     }
     
@@ -31,24 +33,24 @@ extension UIView {
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: -padding).isActive = true
     }
     
-    func stickToView(view: UIView, padding: UIEdgeInsets = UIEdgeInsets.zero) {
-        alignToLeft(view: view, padding: padding.left)
-        alignToRight(view: view, padding: padding.right)
-        alignToTop(view: view, padding: padding.top)
-        alignToBottom(view: view, padding: padding.bottom)
+    func embedToView(view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero) {
+        alignToLeft(view: view, padding: insets.left)
+        alignToRight(view: view, padding: insets.right)
+        alignToTop(view: view, padding: insets.top)
+        alignBottom(toTopOf: view, padding: insets.bottom)
     }
     
-    func centerXtoView(view: UIView) {
+    func centerX(to view: UIView) {
          NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
     }
     
-    func centerYtoView(view: UIView) {
+    func centerY(to view: UIView) {
          NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
     }
     
     func centerToView(view: UIView) {
-        centerXtoView(view: view)
-        centerYtoView(view: view)
+        centerX(to: view)
+        centerY(to: view)
     }
 }
 

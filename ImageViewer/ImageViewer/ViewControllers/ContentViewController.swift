@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Screen which all facts
+*/
 class ContentViewController: UIViewController {
     private let cellIdentifier = "rowIdentifier"
     private var collectionView: UICollectionView?
@@ -17,14 +20,6 @@ class ContentViewController: UIViewController {
         didSet {
             updateContent()
         }
-    }
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -40,7 +35,7 @@ class ContentViewController: UIViewController {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
-        collectionView.stickToView(view: view)
+        collectionView.embedToView(view: view)
         collectionView.dataSource = self
         collectionView.register(RowCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.backgroundColor = .white
@@ -58,7 +53,6 @@ class ContentViewController: UIViewController {
             refreshControl.endRefreshing()
         }
         collectionView?.reloadData()
-        collectionView?.collectionViewLayout.invalidateLayout()
     }
     
     @objc private func fetchData() {
