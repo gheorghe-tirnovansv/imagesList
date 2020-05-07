@@ -12,10 +12,12 @@ class FactsViewModel: NSObject {
     private(set) var title = ""
     private var factsModel: FactsModel
     private(set) var rows: [RowModel]
+    private(set) var refreshAction: (() -> Void)
     
-    init(with factsModel: FactsModel) {
+    init(with factsModel: FactsModel, refreshAction:@escaping () -> Void) {
         title = factsModel.title
         self.factsModel = factsModel
+        self.refreshAction = refreshAction
         rows = factsModel.rows.filter { $0.hasValidContent() }
         super.init()
     }

@@ -31,7 +31,9 @@ class MainViewController: UIViewController {
                 noContentViewController.viewModel = viewModel
                 showController(noContentViewController)
             case .fullContent(let content):
-                let viewModel = FactsViewModel(with: content)
+                let viewModel = FactsViewModel(with: content){ [weak self] in
+                    self?.loadContent()
+                }
                 self.title = viewModel.title
                 contentViewController.viewModel = viewModel
                 showController(contentViewController)
@@ -51,6 +53,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentState = .loading
+        loadContent()
+    }
+    
+    private func loadContent() {
         NetworkingHandler.fetchContent { [weak self] response in
             switch response {
             case .success(let factsModel):
@@ -61,7 +67,11 @@ class MainViewController: UIViewController {
         }
     }
     
-    func showController(_ new: UIViewController) {
+    private func showController(_ new: UIViewController) {
+        guard new != currentViewController else {
+            //current view controller is already displayed
+            return
+        }
         currentViewController.removeFromParent()
         currentViewController.view.removeFromSuperview()
         

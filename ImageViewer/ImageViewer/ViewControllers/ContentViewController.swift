@@ -11,6 +11,7 @@ import UIKit
 class ContentViewController: UIViewController {
     private let cellIdentifier = "rowIdentifier"
     private var collectionView: UICollectionView?
+    private let refreshControl = UIRefreshControl()
     
     var viewModel: FactsViewModel? {
         didSet {
@@ -44,12 +45,24 @@ class ContentViewController: UIViewController {
         collectionView.register(RowCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.backgroundColor = .white
         self.collectionView = collectionView
+        
+        // Configure Refresh Control
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+        
         collectionView.reloadData()
     }
     
-    func updateContent() {
+    private func updateContent() {
+        if refreshControl.isRefreshing {
+            refreshControl.endRefreshing()
+        }
         collectionView?.reloadData()
         collectionView?.collectionViewLayout.invalidateLayout()
+    }
+    
+    @objc private func fetchData() {
+        viewModel?.refreshAction()
     }
 }
 
