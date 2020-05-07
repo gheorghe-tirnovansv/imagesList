@@ -1,0 +1,12 @@
+reporter: json
+whitelist_rules:
+  - control_statement
+  - legacy_constructor
+  - trailing_semicolon
+  - trailing_newline
+excluded:
+  - Carthage
+  - Pods
+  - ThirdParty
+  - scripts
+
