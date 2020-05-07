@@ -9,7 +9,7 @@
 import Alamofire
 import SwiftyJSON
 
-enum NetworkingError: Error {
+enum NetworkingErrorContext: Error {
     case invalidUrl
     case invalidResponse(error: Error)
     case serverError(error: Error)
@@ -19,7 +19,7 @@ class NetworkingHandler: NSObject {
     
     private static let urlString  = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
     
-    static func fetchContent(completion:@escaping (Result<FactsModel, NetworkingError>) -> Void) {
+    static func fetchContent(completion:@escaping (Result<FactsModel, NetworkingErrorContext>) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(.failure(.invalidUrl))
             return

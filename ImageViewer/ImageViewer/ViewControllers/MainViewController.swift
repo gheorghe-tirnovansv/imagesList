@@ -11,12 +11,12 @@ import UIKit
 class MainViewController: UIViewController {
 
     enum ControllerState {
-        case loading, emptyContent, fullContent(content:FactsModel)
+        case loading, noContent(context: NetworkingErrorContext), fullContent(content: FactsModel)
     }
     
     private var currentViewController: UIViewController = LoadingViewController()
     private let loadingViewController = LoadingViewController()
-    private let emptyViewController = EmptyViewController()
+    private let noContentViewController = NoContentViewController()
     private let contentViewController = ContentViewController()
     
     var currentState: ControllerState {
@@ -25,9 +25,11 @@ class MainViewController: UIViewController {
             case .loading:
                 self.title = "Loading content..."
                 showController(loadingViewController)
-            case .emptyContent:
-                self.title = ""
-                showController(emptyViewController)
+            case .noContent(let context):
+                let viewModel = NoContentViewModel(with:context)
+                self.title = viewModel.title
+                noContentViewController.viewModel = viewModel
+                showController(noContentViewController)
             case .fullContent(let content):
                 let viewModel = FactsViewModel(with: content)
                 self.title = viewModel.title
@@ -53,8 +55,8 @@ class MainViewController: UIViewController {
             switch response {
             case .success(let factsModel):
                 self?.currentState = .fullContent(content: factsModel)
-            case .failure(_):
-                self?.currentState = .emptyContent
+            case .failure(let errorContext):
+                self?.currentState = .noContent(context: errorContext)
             }
         }
     }

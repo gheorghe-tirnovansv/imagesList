@@ -19,10 +19,11 @@
 		5C8A680B2463D6190085EFC7 /* FactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680A2463D6190085EFC7 /* FactsViewModel.swift */; };
 		5C8A680E2463D6780085EFC7 /* NetworkingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680D2463D6780085EFC7 /* NetworkingHandler.swift */; };
 		5C8A68102463DB690085EFC7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A680F2463DB690085EFC7 /* LoadingViewController.swift */; };
-		5C8A68122463DB820085EFC7 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68112463DB820085EFC7 /* EmptyViewController.swift */; };
+		5C8A68122463DB820085EFC7 /* NoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68112463DB820085EFC7 /* NoContentViewController.swift */; };
 		5C8A68142463DB980085EFC7 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8A68132463DB980085EFC7 /* ContentViewController.swift */; };
 		5CE333F92463E82000D01552 /* UIView+LayoutContraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE333F82463E82000D01552 /* UIView+LayoutContraint.swift */; };
 		5CE333FB2463F6D000D01552 /* RowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE333FA2463F6D000D01552 /* RowModel.swift */; };
+		5CE333FD24644A1000D01552 /* NoContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE333FC24644A1000D01552 /* NoContentViewModel.swift */; };
 		5F81CE32BE8C0433A8643EC9 /* Pods_ImageViewer_ImageViewerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B8DDADA60EA7E38BC99264 /* Pods_ImageViewer_ImageViewerUITests.framework */; };
 		6C67970A482495A4CFE963A3 /* Pods_ImageViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4017A603B02FE3F440E4D5EE /* Pods_ImageViewerTests.framework */; };
 /* End PBXBuildFile section */
@@ -68,10 +69,11 @@
 		5C8A680A2463D6190085EFC7 /* FactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewModel.swift; sourceTree = "<group>"; };
 		5C8A680D2463D6780085EFC7 /* NetworkingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHandler.swift; sourceTree = "<group>"; };
 		5C8A680F2463DB690085EFC7 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		5C8A68112463DB820085EFC7 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
+		5C8A68112463DB820085EFC7 /* NoContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentViewController.swift; sourceTree = "<group>"; };
 		5C8A68132463DB980085EFC7 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		5CE333F82463E82000D01552 /* UIView+LayoutContraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutContraint.swift"; sourceTree = "<group>"; };
 		5CE333FA2463F6D000D01552 /* RowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowModel.swift; sourceTree = "<group>"; };
+		5CE333FC24644A1000D01552 /* NoContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentViewModel.swift; sourceTree = "<group>"; };
 		A79BDEA34BB3A0C590ACA091 /* Pods-ImageViewer-ImageViewerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageViewer-ImageViewerUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImageViewer-ImageViewerUITests/Pods-ImageViewer-ImageViewerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCFE2EE2A7175B368DE54FB8 /* Pods-ImageViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageViewerTests.release.xcconfig"; path = "Target Support Files/Pods-ImageViewerTests/Pods-ImageViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1D2D23405F6D47B1D178B07 /* Pods-ImageViewer-ImageViewerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageViewer-ImageViewerUITests.release.xcconfig"; path = "Target Support Files/Pods-ImageViewer-ImageViewerUITests/Pods-ImageViewer-ImageViewerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +179,7 @@
 			children = (
 				5C859FA6246312530003ECB7 /* MainViewController.swift */,
 				5C8A680F2463DB690085EFC7 /* LoadingViewController.swift */,
-				5C8A68112463DB820085EFC7 /* EmptyViewController.swift */,
+				5C8A68112463DB820085EFC7 /* NoContentViewController.swift */,
 				5C8A68132463DB980085EFC7 /* ContentViewController.swift */,
 			);
 			path = ViewControllers;
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				5C8A680A2463D6190085EFC7 /* FactsViewModel.swift */,
+				5CE333FC24644A1000D01552 /* NoContentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -496,8 +499,9 @@
 			files = (
 				5C8A68102463DB690085EFC7 /* LoadingViewController.swift in Sources */,
 				5C8A680B2463D6190085EFC7 /* FactsViewModel.swift in Sources */,
-				5C8A68122463DB820085EFC7 /* EmptyViewController.swift in Sources */,
+				5C8A68122463DB820085EFC7 /* NoContentViewController.swift in Sources */,
 				5CE333F92463E82000D01552 /* UIView+LayoutContraint.swift in Sources */,
+				5CE333FD24644A1000D01552 /* NoContentViewModel.swift in Sources */,
 				5C859FA7246312530003ECB7 /* MainViewController.swift in Sources */,
 				5C8A68142463DB980085EFC7 /* ContentViewController.swift in Sources */,
 				5C8A680E2463D6780085EFC7 /* NetworkingHandler.swift in Sources */,
