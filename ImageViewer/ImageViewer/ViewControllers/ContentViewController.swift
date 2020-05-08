@@ -44,8 +44,6 @@ class ContentViewController: UIViewController {
         // Configure Refresh Control
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
-        
-        collectionView.reloadData()
     }
     
     private func updateContent() {
@@ -53,6 +51,14 @@ class ContentViewController: UIViewController {
             refreshControl.endRefreshing()
         }
         collectionView?.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {[weak self] in
+            self?.collectionView?.performBatchUpdates(nil, completion: nil)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateContent()
     }
     
     @objc private func fetchData() {

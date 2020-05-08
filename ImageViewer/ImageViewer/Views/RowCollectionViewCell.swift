@@ -16,8 +16,6 @@ class RowCollectionViewCell: UICollectionViewCell {
     private var imageView = UIImageView()
     private var titleLabel = UILabel()
     private var descriptionLabel = UILabel()
-    private var widthConstraint: NSLayoutConstraint? = nil
-    private var heightConstraint: NSLayoutConstraint? = nil
     static let defaultImageHight: CGFloat = 300.0
     static let defaultImageWidth: CGFloat = 300.0
     
@@ -32,16 +30,15 @@ class RowCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        widthConstraint?.constant = RowCollectionViewCell.defaultImageWidth
-        heightConstraint?.constant = RowCollectionViewCell.defaultImageHight
         titleLabel.text = ""
         descriptionLabel.text = ""
     }
     
     func setupUI() {
         contentView.backgroundColor = .white
+        contentView.embedToView(view: self)
         
-        translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -54,22 +51,6 @@ class RowCollectionViewCell: UICollectionViewCell {
         imageView.alignToRight(view: contentView)
         imageView.alignToLeft(view: contentView)
         imageView.alignBottom(toTopView: titleLabel)
-        self.widthConstraint = NSLayoutConstraint(item: imageView,
-                                                  attribute: .width,
-                                                  relatedBy: .equal,
-                                                  toItem: nil,
-                                                  attribute: .notAnAttribute,
-                                                  multiplier: 1.0,
-                                                  constant: RowCollectionViewCell.defaultImageWidth)
-        self.widthConstraint?.isActive = true
-        self.heightConstraint = NSLayoutConstraint(item: imageView,
-                                                   attribute: .height,
-                                                   relatedBy: .equal,
-                                                   toItem: nil,
-                                                   attribute: .notAnAttribute,
-                                                   multiplier: 1.0,
-                                                   constant: RowCollectionViewCell.defaultImageHight)
-        self.heightConstraint?.isActive = true
         
         titleLabel.textAlignment = .left
         titleLabel.numberOfLines = 0
@@ -87,18 +68,15 @@ class RowCollectionViewCell: UICollectionViewCell {
         descriptionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         descriptionLabel.setContentHuggingPriority(.required, for: .vertical)
+        
+        titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        descriptionLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
     func updateContent(model: RowModel) {
         titleLabel.text = model.title
         descriptionLabel.text = model.description
         let url = URL(string:  model.imageHref ?? "")
-        imageView.sd_setImage(with: url,
-                              placeholderImage: UIImage(named: "placeholderImage"),
-                              progress: nil) {[weak self] (image, error, type, url) in
-                                guard let self = self else { return }
-                                self.widthConstraint?.constant = self.imageView.image?.size.width ?? RowCollectionViewCell.defaultImageWidth
-                                self.heightConstraint?.constant = self.imageView.image?.size.height ?? RowCollectionViewCell.defaultImageHight
-        }
+        imageView.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholderImage"))
     }
 }
